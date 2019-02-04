@@ -124,6 +124,7 @@ end
 def num_points_scored(players_name)
   #begin terate through first layer of hash
 game_hash.each do |team,attribute|
+
   attribute.each do |opt1, opt2|
     #find the option that has players
     if opt1 == :players
@@ -170,13 +171,17 @@ def shoe_size(players_name)
   end
 #Build a method, team_colors, that takes in an argument of the team name and returns an array of that teams colors.
 
-def team_colors(teamname)
-if game_hash[:home][:team_name] == teamname
-  #returns the arrar if team_name matches teamname
-  game_hash[:home][:colors]
-elsif game_hash[:away][:team_name] == teamname
-  game_hash[:away][:colors]
+def team_colors(teamname) #"brooklyn_nets"
+game_hash.each do |team,attribute|
+if game_hash[team][:team_name] == teamname
+  return game_hash[team][:colors]
 end
+end
+#if game_hash[:home][:team_name] == teamname
+  #returns the arrar if team_name matches teamname
+#  game_hash[:home][:colors]
+#elsif game_hash[:away][:team_name] == teamname
+#  game_hash[:away][:colors]
 end
 
 #Build a method, team_names, that operates on the game hash to return an array of the team names.
