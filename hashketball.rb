@@ -144,24 +144,13 @@ def num_points_scored(players_name)
   #begin terate through first layer of hash
 game_hash.each do |team,attribute|
 
-  attribute.each do |opt1, opt2|
+  attribute[:players].each do |name, stats|
     #find the option that has players
-    if opt1 == :players
-      opt2.each do |name,attribute|
         #returns the name of player defined in the function argument
         if name == players_name
         #print "#{name}: "
-        attribute.each do |result,value|
-          #finds the amount of points associated with player name
-          if result == :points
-            return value
-            #uses a return to end the function once the value is found for the players points
-
-          end
-        end
-      end
-    end
-  end
+        return stats[:points]
+end
 end
 end
 end
