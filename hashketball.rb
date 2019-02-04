@@ -131,7 +131,7 @@ game_hash.each do |team,attribute|
   end
 end
 end
-    
+
 
 
 
