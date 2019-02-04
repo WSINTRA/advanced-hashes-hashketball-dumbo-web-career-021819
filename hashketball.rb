@@ -121,6 +121,24 @@ def game_hash
   game_hash
 end
 
+def num_to_name(number)
+  #returns a string of the player name who's number is passed
+game_hash.each do |team,attribute|
+  attribute[:players].each do |name,stats|
+    if stats[:number] == number
+      return name
+    end
+  end
+end
+end
+    
+
+
+
+
+
+
+
 def num_points_scored(players_name)
   #begin terate through first layer of hash
 game_hash.each do |team,attribute|
