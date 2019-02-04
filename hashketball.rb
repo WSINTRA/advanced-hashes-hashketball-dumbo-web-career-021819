@@ -131,6 +131,7 @@ game_hash.each do |team,attribute|
   end
 end
 end
+puts num_to_name(33)
 
 
 
